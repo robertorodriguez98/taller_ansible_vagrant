@@ -7,11 +7,14 @@
       # Instalar paquetes
     - name: "Instalar paquetes con apt"
       apt: # Aquí tienes que poner lo necesario para instalar git y apache2
+        pkg:
+        - git
+        - apache2
       # Copia un fichero a la máquina remota
     - name: "Copiar fichero a la máquina remota"
       copy:
         src: files/foo.conf
-        dest: 
+        dest: /etc/foo.conf
         owner: root
         group: root
         mode: '0644'
